@@ -25,3 +25,19 @@ public class Main {
 
     }
 }
+
+Variable = A reusable container for values
+
+Primitive var = simple value directly stored in stack
+Refrence var = memory address that points to heap
+
+Primitive        vs        Reference 
+------------------------------------
+int                        string
+double                     array
+char                       object
+boolean
+
+ Setps in creating variable
+1. Declaration
+2. Assignment
