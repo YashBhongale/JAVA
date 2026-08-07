@@ -30,3 +30,7 @@ sc.nextLine()	-> Reads a full line of input
 sc.close()	-> Closes the Scanner
 
 We need need to close the scanner by .close comand cause if we do naot it can occupy unnecessary memory from system 
+
+There is exception for one case if we take and input and the immediate next input/command is string it does not get accepted
+cause it register previous enter as carecter and remains in the buffer, hence not storing the value. The trick here it to add
+sc.nextLine();command between those two to remove that input buffer.
