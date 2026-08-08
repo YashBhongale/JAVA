@@ -8,6 +8,7 @@ Math.floor();  <-- rounds down the value.
 Math.sqrt();  <-- finds square root of entered value.
 Math.Max(num,num)  <-- select the maximum number between the given two values.
 Math.min(num,num)  <-- selects minimum value between the given two values.
+Math.PI  <-- value of pi.
 
 //Hypotenuse of right angled triangle
 
@@ -29,3 +30,20 @@ public class Main{
     sc.close();
   }
 }
+
+//Circumference of a circle
+
+import java.util.Scanner;
+
+public class Main{
+  public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter the radius of a circle (int): ");
+    int r = sc.nextInt();
+
+    double cur = 2*Math.PI*r;
+    System.out.print("The value of circumference of the circle of given radius is " + cur + " cm.");  
+    sc.close();
+  }
+}
+
