@@ -78,3 +78,29 @@ Compares two strings exactly and is case-sensitive.
 
 equalsIgnoreCase()
 Compares two strings while ignoring uppercase/lowercase differences.*/
+
+
+Substring Method 
+String substring = name.substring(start,end); used to get a part form main string by using start and end point.
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args  ){
+        Scanner sc = new Scanner(System.in);
+        String email;
+        String username;
+        String domain;
+
+        System.out.print("Enter your e-mail address: ");
+        email = sc.nextLine();
+
+        username = email.substring(0,email.indexOf("@"));
+        domain = email.substring(email.indexOf("@") + 1);    //<--we can use only start point if we have to take the substring till end(no end point needed).
+
+        System.out.println("Your E-mail address is " + email);
+        System.out.println("Your username is " + username);
+        System.out.println("Your domain is " + domain);
+        sc.close();
+    }
+}
