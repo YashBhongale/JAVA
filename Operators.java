@@ -32,3 +32,30 @@ public class Main{
     
   }
 }
+
+// &&, ||, ! Operators:
+&& -> AND Operator.
+|| -> OR Operator.
+! -> NOT Operator.
+
+import java.util.Scanner;
+
+public class Main{
+  public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    
+    System.out.print("Enter a Username: ");
+    String username = sc.nextLine();
+
+    System.out.print("Enter a Password: ");
+    String password = sc.nextLine();
+
+    switch(username){
+      case username.length() < 4 || username.length()>12 -> System.out.print("Username must have characters in between 4-12.");
+      case username.contains(" ") -> System.out.print("Username can't contain any spaces.");
+    }
+    System.out.print(username);
+    sc.close();
+    
+  }
+}
