@@ -41,21 +41,27 @@ public class Main{
 import java.util.Scanner;
 
 public class Main{
-  public static void main(String[] args){
-    Scanner sc = new Scanner(System.in);
-    
-    System.out.print("Enter a Username: ");
-    String username = sc.nextLine();
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
 
-    System.out.print("Enter a Password: ");
-    String password = sc.nextLine();
+        System.out.print("Enter a Username: ");
+        String username = sc.nextLine();
 
-    switch(username){
-      case username.length() < 4 || username.length()>12 -> System.out.print("Username must have characters in between 4-12.");
-      case username.contains(" ") -> System.out.print("Username can't contain any spaces.");
+        if(username.length() < 4 || username.length()>12){
+            System.out.print("Username must have characters in between 4-12.");
+            return;
+        }
+        else if(username.contains(" ")){
+            System.out.print("Username can't contain any spaces.");
+            return;
+        }
+
+        System.out.print("Enter a Password: ");
+        String password = sc.nextLine();
+
+        System.out.println("Username: " + username);
+        System.out.print("Password: " + password);
+        sc.close();
+
     }
-    System.out.print(username);
-    sc.close();
-    
-  }
 }
