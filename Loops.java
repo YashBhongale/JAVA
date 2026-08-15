@@ -75,3 +75,37 @@ public class Main{
         sc.close();
     }
 }
+
+//For Loops:
+//  -> It is a type of loop which can execute code certain amount of time.
+//  -> Syntax: for(int i = 0;i<n;i++){
+//
+//             }
+
+public class Main{
+  public static void main(String[] args){
+    for(int i = 1 ; i <= 10 ; i++){
+      System.out.println(i);
+    }
+  }
+}
+
+//break:Breaking out of a loop(Stop).
+//continue:Skip current iteration of a Loop(Skip).
+
+public class Main{
+    public static void main(String[] args){
+        for(int i = 1;i <= 10;i++){
+            if(i == 2){
+                continue;
+            }
+            else if(i == 7){
+                break;
+            }
+            System.out.println(i);
+        }
+    }
+}
+
+//Output: 1 3 4 5 6
+
