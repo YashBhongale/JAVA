@@ -55,3 +55,27 @@ public class Main{
         return Math.pow(num,2);    //<-- We can directly write single linee calculation in return statement,also pow method need double data type to store.
     }
 }
+
+//Overloading Methods:Methods that share the same name , but different parameters Signature = name + parameter.
+
+public class Main{
+    public static void main(String[] args){
+        int age = 20;
+        String name = "Berus";
+        info(age);
+        info(name);
+        info(age,name);
+        
+    }
+    static void info(int age){
+        System.out.printf("Your age is %d.\n",age);
+    }
+    static void info(String name){
+        System.out.printf("Your name is %s.\n",name);
+    }
+    static void info(int age, String name){
+        System.out.printf("Your name is %s.\n",name);
+        System.out.printf("Your age is %d.",age);
+    }
+}
+
