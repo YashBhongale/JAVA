@@ -109,3 +109,17 @@ public class Main{
 
 //Output: 1 3 4 5 6
 
+//Nested Loops
+Loops can be written inside of loof this concept is called nesting.
+
+public class Main{
+  public static void main(String[] args){
+    int a = 1;
+    for(int i = 1;i <= 3;i++){
+      for(;a <= 3*i;a++){
+        System.out.print(a + " ");
+      }
+      System.out.println();
+    }
+  }
+}
