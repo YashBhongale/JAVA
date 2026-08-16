@@ -41,3 +41,22 @@ boolean
  Setps in creating variable
 1. Declaration
 2. Assignment
+
+//Variable Scope: Where a variable can be access.
+//Local variables: Variables defined in a method are called local variable.
+//Class variables: Variables defined in the Main class are known as class variables.
+
+public class Main{
+    int x = 1;//Class
+    public static void main(String[] args){
+        int x = 2;//Local
+        System.out.println(x);
+        doSomething();
+    }
+    static void doSomething(){
+        int x = 3;//Local 
+        System.out.println(x);
+    }
+}
+//JAVA prefer local variable over Class variable.
+    
