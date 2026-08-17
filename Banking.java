@@ -9,7 +9,7 @@ public class Main {
 
         while(isRunning){
             System.out.println("-----Banking Program-----");
-            System.out.println("1.Show balance: \n2.Deposit: \n3.Withdraw: \n4.Exit: ");
+            System.out.println("1.Show balance: \n2.Withdraw: \n3.Deposit: \n4.Exit: ");
             System.out.print("Your choice: ");
 
             choice = sc.nextInt();
@@ -18,21 +18,26 @@ public class Main {
             switch (choice){
 
                 case 1 -> showBalance(balance);
-                case 2 -> balance -= withdraw();
+                case 2 -> balance -= withdraw(balance);
                 case 3 -> balance += deposit();
                 case 4 -> isRunning = false;
 
             }
         }
+        System.out.println("have a nice day!");
     }
 
 
-    static double withdraw() {
+    static double withdraw(double balance) {
         System.out.print("Enter the amount you want to withdraw: ");
         double withdraw = sc.nextDouble();
 
         if(withdraw <0){
             System.out.println("Cant withdraw negative value.");
+            return 0;
+        }
+        else if(withdraw > balance){
+            System.out.println("Balance is Insufficient!");
             return 0;
         }
         else{
@@ -55,6 +60,6 @@ public class Main {
     }
 
     static void showBalance(double balance){
-        System.out.printf("Your balance is %f.\n",balance);
+        System.out.printf("Your balance is $%.2f.\n",balance);
     }
 }
