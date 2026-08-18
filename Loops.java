@@ -123,3 +123,13 @@ public class Main{
     }
   }
 }
+//Enhanced for loop:
+
+public class Main{
+  public static void main(String[] args){
+    String fruits = {"Apple","Banana","Orange"};
+    for(String friut: fruits){    //-> here fruit is unique identifier
+      System.out.print(fruit);
+    } 
+  }
+}
