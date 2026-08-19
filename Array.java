@@ -18,3 +18,27 @@ public class Main{
         }
     }
 }
+
+//We can use Array library by importing it  -> import java.util.Arrays;
+//Arrays.sort(fruit)        -> it sorts array of fruit in ascending order.
+//Arrays.fill(fruit,"Mango")        ->it stores new given value in the Whole array.
+
+import java.util.Arrays;
+
+public class Main{
+    public static void main(String[] args){
+        String[] fruits = {"Apple","Pineapple","Banana","Orange"};
+        print(fruits);
+        Arrays.sort(fruits);
+        print(fruits);
+        Arrays.fill(fruits,"Pear");
+        print(fruits);
+    }
+    static void print(String[] fruits){
+        int length = fruits.length;
+        for(int i = 0; i<length;i++){
+            System.out.print(fruits[i] + " ");
+        }
+        System.out.println();
+    }
+}
