@@ -42,3 +42,42 @@ public class Main{
         System.out.println();
     }
 }
+
+//Taking the user input for an array.
+//We need to fix an definite size of array.
+
+String[] fruits = new String[4];
+//Here by using new keyword we are creating an array of size 4.
+//Note We cannot input more values than the the given value as it is the maximum input where as we can input less values.
+
+public class Main{
+    public static void main(String[] args){
+        String[] fruits = new String[4];
+
+        fruits[0] = "Apple";
+        fruits[1] = "Banana";
+        fruits[2] = "Orange";
+        fruits[3] = "Pear";
+
+        for(int i =0;i<4;i++){
+            System.out.printf("%s ",fruits[i]);
+        }
+    }
+}
+
+//Using Enhanced for loop.
+
+public class Main{
+    public static void main(String[] args){
+        String[] fruits = new String[4];
+
+        fruits[0] = "Apple";
+        fruits[1] = "Banana";
+        fruits[2] = "Orange";
+        fruits[3] = "Pear";
+
+        for(String fruit : fruits){
+            System.out.print(fruit + " ");
+        }
+    }
+}
