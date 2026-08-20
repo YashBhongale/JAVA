@@ -81,3 +81,55 @@ public class Main{
         }
     }
 }
+
+//Taking an user input in array.
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String[] fruit ;
+        int size;
+
+        System.out.print("Enter number of fruits you want to store");
+        size = sc.nextInt();
+        fruit = new String[size];
+
+        for(int i = 0; i < size; i++){
+            System.out.print("Enter a fruit you want to store");
+            fruit[i] = sc.next();
+        }
+        for(String UI : fruit){
+            System.out.print(UI + " ");
+        }
+        sc.close();
+    }
+}
+
+//Searching in an array.
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int[] numbers = {1,2,4,0,6,8,5,3,7,9};
+        boolean isFound = false;
+        int target;
+
+        System.out.print("Enter the number to find its position (0-9): ");
+        target = sc.nextInt();
+
+        for(int i = 0; i < 10; i++){
+            if(numbers[i]==target){        //.equals() is used for String like functions.
+                isFound = true;
+                System.out.print("The number is found at the index " + i + ".");
+            }
+        }
+        if(!isFound){
+                System.out.print("The given number is not found in array.");
+            }
+        sc.close();
+        
+    }
+}
