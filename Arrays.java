@@ -133,3 +133,46 @@ public class Main{
         
     }
 }
+
+//2D Arrays.
+//An Array Where each element is an array, useful for storing matrix of data.
+Syntax: String[][] foods = {fruits,meat,vegetables};
+
+public class Main{
+    public static void main(String[] args){
+        String[] fruits = {"Apple","Banana","Pineapple"};
+        String[] meat = {"Chicken","Duck","Fish"};
+        String[] vegetable = {"Cabage","Onion","Potato"};
+
+        String[][] groceries = {fruits,meat,vegetable};
+
+        for(String[] foods : groceries){
+            for(String food : foods){
+                System.out.print(food + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+//We can access elements by first accessing the internal array.
+//we can also change specific element by inputing matrix value.
+
+public class Main{
+    public static void main(String[] args){
+        String[] fruits = {"Apple","Banana","Pineapple"};
+        String[] meat = {"Fish","Chicken","Duck"};
+        String[] vegetable = {"Cabage","Onion","Potato"};
+
+        String[][] groceries= {fruits,meat,vegetable};
+        groceries[0][0] = "Mango";
+
+        for(String[] foods : groceries){
+            for(String food: foods){
+                System.out.print(food + " ");
+            }
+            System.out.println();
+        }
+        
+    }
+}
