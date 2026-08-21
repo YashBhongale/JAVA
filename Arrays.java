@@ -176,3 +176,21 @@ public class Main{
         
     }
 }
+
+//Making a 2D array which resembles dailpad.
+
+public class Main{
+    public static void main(String[] args){
+        char[][] dailpad = {{'1','2','3'},
+                            {'4','5','6'},
+                            {'7','8','9'},
+                            {'*','0','#'}};
+
+        for(char[] row : dailpad){
+            for(char number : row){
+                System.out.print(number + " ");
+            }
+            System.out.println();
+        }
+    }
+}
