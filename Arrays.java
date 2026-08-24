@@ -197,18 +197,21 @@ public class Main{
 
 // Quiz Game.
 
+import java.util.Scanner;
+
 public class Main{
     public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
         String[] question = {"What is 1 + 1?",
-                             "What is capital of India?",
-                             "Which data structure follows the LIFO principle?",
-                             "Which keyword is used to create an object in Java?"};
+                "What is capital of India?",
+                "Which data structure follows the LIFO principle?",
+                "Which keyword is used to create an object in Java?"};
 
         String[][] option = {{"1.3","2.4","3.2","4.3"},
-                             {"1.Mumbai","2.New Delhi","3.Kolkata","4.Chennai"},
-                             {"1.Queue","2.Array","3.Stack","4.Linked List"},
-                             {"1.class","2.new","3.object","4.create"}};
-        
+                {"1.Mumbai","2.New Delhi","3.Kolkata","4.Chennai"},
+                {"1.Queue","2.Array","3.Stack","4.Linked List"},
+                {"1.class","2.new","3.object","4.create"}};
+
         int[] answers = {3,2,3,2};
         int guess;
         int score = 0;
@@ -216,14 +219,24 @@ public class Main{
         System.out.println("Welcome!");
         for(int i = 0; i<4 ; i++){
             System.out.println(question[i]);
-            System.out
-            
-        }
-        //    option
-        //    Get guess from user
-        //    Check your guess
-        //Display your final score
+            for (int j = 0;j<4;j++){
+                System.out.println(option[i][j]);
+            }
+            System.out.print("Enter your Choice: ");
+            guess = sc.nextInt();
+            if(guess == answers[i]){
+                score++;
+                System.out.println("Correct!!");
+            }
+            else{
+                System.out.println("Wrong!!");
+                System.out.println("---------------------");
+                continue;
+            }
+            System.out.println("---------------------");
 
-        
+        }
+        System.out.println("Your final Score is " + score);
+
     }
 }
