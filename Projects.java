@@ -170,3 +170,99 @@ public class Main {
         }
     }
 }
+
+// Quiz Game.
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String[] question = {"What is 1 + 1?",
+                "What is capital of India?",
+                "Which data structure follows the LIFO principle?",
+                "Which keyword is used to create an object in Java?"};
+
+        String[][] option = {{"1.3","2.4","3.2","4.3"},
+                {"1.Mumbai","2.New Delhi","3.Kolkata","4.Chennai"},
+                {"1.Queue","2.Array","3.Stack","4.Linked List"},
+                {"1.class","2.new","3.object","4.create"}};
+
+        int[] answers = {3,2,3,2};
+        int guess;
+        int score = 0;
+
+        System.out.println("Welcome!");
+        for(int i = 0; i<4 ; i++){
+            System.out.println(question[i]);
+            for (int j = 0;j<4;j++){
+                System.out.println(option[i][j]);
+            }
+            System.out.print("Enter your Choice: ");
+            guess = sc.nextInt();
+            if(guess == answers[i]){
+                score++;
+                System.out.println("Correct!!");
+            }
+            else{
+                System.out.println("Wrong!!");
+                System.out.println("---------------------");
+                continue;
+            }
+            System.out.println("---------------------");
+
+        }
+        System.out.println("Your final Score is " + score);
+        sc.close();
+    }
+}
+
+//Rock Paper Scissors
+
+import java.util.Scanner;
+import java.util.Random;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        Random rd = new Random();
+
+        String player_choice;
+        String computer_choice = "";
+        boolean replay = true;
+
+        while(replay){
+            int random = rd.nextInt(1,4);
+            switch(random){
+                case 1 -> computer_choice = "rock";
+                case 2 -> computer_choice = "paper";
+                case 3 -> computer_choice = "scissors";
+            }
+            System.out.print("Enter your choice(Rock,Paper,Scissors): ");
+            player_choice = sc.next().toLowerCase();
+
+            if(player_choice.equals(computer_choice)){
+                System.out.println("DRAW!!");
+
+            }
+            else if ((player_choice.equals("rock") && computer_choice.equals("scissors"))||
+                    (player_choice.equals("paper") && computer_choice.equals("rock"))||
+                    (player_choice.equals("scissors") && computer_choice.equals("paper"))){
+                System.out.println("YOU WON!!");
+            }
+            else if ((computer_choice.equals("rock") && player_choice.equals("scissors"))||
+                    (computer_choice.equals("paper") && player_choice.equals("rock"))||
+                    (computer_choice.equals("scissors") && player_choice.equals("paper"))){
+                System.out.println("YOU LOST!!");
+            }
+            else{
+                System.out.println("Invalid");
+            }
+            System.out.print("Do you want to play again(yes/no): ");
+            String yes_or_no = sc.next().toLowerCase();
+            if(yes_or_no.equals("no")){
+                replay = false;
+            }
+        }
+        sc.close();
+    }
+}
