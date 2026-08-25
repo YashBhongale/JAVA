@@ -266,3 +266,85 @@ public class Main{
         sc.close();
     }
 }
+
+//Slot Machine.
+//String.join(" | ",slot) -> every char from slot is joined by " | ".
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+
+        double Balance = 100;
+        boolean play = true;
+        double bet;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("->-->-->-->-->-->CASINO<--<--<--<--<--<-");
+        System.out.println("Your initial playable balance is $" + Balance);
+        while(play){
+            if(Balance<=0){
+                System.out.println("Insufficient Balance to play more!!");
+                break;
+            }
+            System.out.print("Enter your bet Amount: ");
+            bet = sc.nextDouble();
+            if(bet>Balance){
+                System.out.println("Bet Amount can't be grater than Balance!!");
+                continue;
+            } else if (bet<=0) {
+                System.out.println("Bet amount can't be '0' or less than Zero!!");
+                continue;
+            }
+            String[] slot = spin();
+            printslot(slot);
+            Balance -= payout(bet,slot);
+            System.out.println("Updated Balance $" + Balance);
+            System.out.print("Do you want to play again(y/n): ");
+            char replay = sc.next().toLowerCase().charAt(0);
+            switch (replay){
+                case 'y' -> play = true;
+                case 'n' -> play = false;
+                default -> {
+                    System.out.println("Next time Enter a valid response!!");
+                    System.out.println("Your final Balance is $" + Balance);
+                    return;
+                }
+
+            }
+        }
+        sc.close();
+        System.out.println("Great Game!!");
+        System.out.println("Your Final Balance is $" + Balance);
+    }
+
+    static String[] spin(){
+        String[] slot_items = {"🍒","🍋","💵","⭐","🔔"};
+        String[] slot = new String[3];
+        Random rd = new Random();
+
+        for (int i = 0; i<3 ;i++){
+            slot[i] = slot_items[rd.nextInt(slot_items.length)];
+        }
+        return slot;
+    }
+    static void printslot(String[] slot){
+        System.out.println(" " + String.join(" | ",slot));
+    }
+    static double payout(double bet,String[] slot){
+        double payout = 0;
+        if (slot[0].equals(slot[1]) && slot[0].equals(slot[2])){
+            System.out.println("BINGO!!  2x-Payout");
+            payout += 2*bet;
+        } else if (slot[0].equals(slot[1]) ||
+                slot[1].equals(slot[2])) {
+            System.out.println("GREAT!!  1.5x-Payout");
+            payout += 1.5*bet;
+
+        }else{
+            System.out.println("You Lost!!");
+        }
+        return payout;
+    }
+}
