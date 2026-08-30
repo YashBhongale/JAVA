@@ -299,7 +299,7 @@ public class Main {
             }
             String[] slot = spin();
             printslot(slot);
-            Balance -= payout(bet,slot);
+            Balance += payout(bet,slot);
             System.out.println("Updated Balance $" + Balance);
             System.out.print("Do you want to play again(y/n): ");
             char replay = sc.next().toLowerCase().charAt(0);
@@ -343,6 +343,7 @@ public class Main {
             payout += 1.5*bet;
 
         }else{
+            payout = bet*-1;
             System.out.println("You Lost!!");
         }
         return payout;
