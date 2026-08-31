@@ -149,5 +149,39 @@ public class User{
 
 }
 
-//Array of objects:
+//Array of objects:        Same as normal Array but we assign object instead of normal values.
+//Main class:
+
+public class Main{
+    public static void main(String[] args){
+
+        Car car1 = new Car("Mustang","Red");
+        Car car2 = new Car("Corvette","Blue");      //<-- we can directly set objects in array.
+        Car car3 = new Car("BMW","Black");
+
+        Car[] cars = {new Car("Mustang","Black"),
+                      new Car("Corvette","Red"),
+                      new Car("BMW","Blue")};
+
+        for (Car car : cars) {
+            car.drive();
+        }
+
+    }
+}
+
+//Car class:
+public class Car{
+    String model;
+    String color;
+
+    Car(String model, String color){
+        this.model = model;
+        this.color = color;
+    }
+
+    void drive(){
+        System.out.println("You drive a " + this.color + " " + this.model + ".");
+    }
+}
 
