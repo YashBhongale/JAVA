@@ -59,4 +59,35 @@ public class Main{
     }
 }
 //JAVA prefer local variable over Class variable.
+
+//Static Keyword: Make variable or method belong to a class rather than any specific object. Commonly used for utility methods or shared resources.
+//As previous if we create friends class and returned total number of friends we get different copy of numOffriends for diff object so we use static so that it belongs to class and not specific object.
+//Main class.
+public class Main {
+    public static void main(String[] args) {
+
+        Friend f1 = new Friend("Berus");
+        Friend f2 = new Friend("Beerus");
+        Friend f3 = new Friend("Beeerus");
+
+        Friend.showFriends();
+    }
+}
+
+//Friend class.
+public class Friend{
+    String name;
+    static int numOfFriends;
+
+    Friend(String name){
+        this.name = name;
+        numOfFriends++;
+    }
+
+    static void showFriends(){
+        System.out.println("You have " + numOfFriends + " in Total.");
+    }
+}
+
+
     
