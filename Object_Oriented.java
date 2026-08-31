@@ -148,4 +148,6 @@ public class User{
     }
 
 }
- 
+
+//Array of objects:
+
