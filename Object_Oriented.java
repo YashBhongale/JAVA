@@ -1,4 +1,4 @@
-//Object: An entity that holds Data(Attirbutes), can perform operations/actions like method.
+ //Object: An entity that holds Data(Attirbutes), can perform operations/actions like method.
         //It is reference data type.
 //Class → Blueprint
 //Object → Actual thing created from blueprint
