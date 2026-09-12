@@ -50,3 +50,34 @@ public class Geeks {
 
 //Super  (keyword).
 //Refer to parent class subclass (subclass <- superclass) used in constructors and method overriding .Calls the parent constructor to initialize attributes.
+
+public class Main{
+    public static void main(String[] args){
+
+        Student student = new Student("Yash","Bhongale",9.5);
+        student.printGpa();
+
+
+    }
+}
+public class Person{
+        String first;
+        String last;
+
+        Person(String first, String last){
+            this.first = first;
+            this.last = last;
+        }
+}
+public class Student extends  Person {
+    double gpa;
+
+    Student(String First, String Last, double gpa){
+        super(First,Last);
+        this.gpa = gpa;
+    }
+
+    void printGpa(){
+        System.out.println(this.first + " " + this.last + "'s gpa is " + this.gpa);
+    }
+}
