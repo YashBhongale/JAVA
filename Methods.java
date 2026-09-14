@@ -117,3 +117,22 @@ public class Fish extends Animal{
         System.out.println("Is Sleeping Ooooo...");
     }
 }
+
+//tostring(): It is inbuilt method in class while creating object which returns hashcode of object when direct object return is invoked.
+//We can override it and use it to define specific features.
+public class Main{
+    public static void main(String[] args){
+        Dog dog = new Dog();
+        System.out.println(dog);
+    }
+}
+public class Dog extends Animal {
+    void move(){
+        System.out.println("Is Running...");
+    }
+
+    @Override
+    public String toString() {
+        return "Is Running...";
+    }
+}
