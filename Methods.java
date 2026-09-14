@@ -78,4 +78,42 @@ public class Main{
         System.out.printf("Your age is %d.",age);
     }
 }
+//Overriding: Method overriding in Java occurs when a subclass provides a specific implementation for a method that is already defined in its parent (superclass). It is the foundational mechanism used to achieve runtime polymorphism (also known as dynamic method dispatch),
+//meaning Java decides which version of the method to execute at runtime based on the actual object type, not the reference variable type.
 
+public class Main{
+    public static void main(String[] args){
+        Dog dog = new Dog();
+        Fish fish = new Fish();
+
+        dog.move();
+        fish.move();
+
+        dog.sleep();
+        fish.sleep();
+    }
+}
+public class Animal {
+    void move(){
+        System.out.println("Is Running...");
+    }
+    void eat(){
+        System.out.println("Is eating");
+    }
+    void sleep(){
+        System.out.println("Is sleeping Zzzzz...");
+    }
+}
+public class Dog extends Animal {
+    void move(){
+        System.out.println("Is Running...");
+    }
+}
+public class Fish extends Animal{
+    void move(){
+        System.out.println("Is Swimming");
+    }
+    void sleep(){
+        System.out.println("Is Sleeping Ooooo...");
+    }
+}
