@@ -185,3 +185,4 @@ public class Car{
     }
 }
 
+//Abstraction: Blueprint of a class ,Used to define class and methods. It is process of hiding implementation details and showing only essential features
