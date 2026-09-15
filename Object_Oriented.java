@@ -186,3 +186,134 @@ public class Car{
 }
 
 //Abstraction: Blueprint of a class ,Used to define class and methods. It is process of hiding implementation details and showing only essential features
+abstract class TV{
+    
+    abstract void turnOn();
+    abstract void turnOff();
+}
+
+// Concrete class implementing the abstract methods
+class TVRemote extends TV{
+    
+    @Override
+    void turnOn(){
+        
+        System.out.println("TV is turned ON.");
+    }
+
+    @Override
+    void turnOff(){
+        
+        System.out.println("TV is turned OFF.");
+    }
+}
+
+// Main class to demonstrate abstraction
+public class Geeks{
+    
+    public static void main(String[] args){
+        
+        TV remote = new TVRemote();
+        remote.turnOn();   
+        remote.turnOff();  
+    }
+}
+
+//Interference: An interface in Java is a blueprint that defines a set of methods a class must implement without providing full implementation details. 
+//It helps achieve abstraction by focusing on what a class should do rather than how it does it. Interfaces also support multiple inheritance in Java.
+import java.io.*;
+
+interface Vehicle {
+    
+    // Abstract methods defined
+    void changeGear(int a);
+    void speedUp(int a);
+    void applyBrakes(int a);
+}
+
+// Class implementing vehicle interface
+class Bicycle implements Vehicle{
+    
+    int speed;
+    int gear;
+    
+    // Change gear
+    @Override
+    public void changeGear(int newGear){
+        gear = newGear;
+    }
+    
+    // Increase speed
+    @Override
+    public void speedUp(int increment){
+        speed = speed + increment;
+    }
+    
+    // Decrease speed
+    @Override
+    public void applyBrakes(int decrement){
+        speed = speed - decrement;
+    }
+    
+    public void printStates() {
+        System.out.println("speed: " + speed
+            + " gear: " + gear);
+    }
+}
+
+// Class implementing vehicle interface
+class Bike implements Vehicle {
+    
+    int speed;
+    int gear;
+    
+    // Change gear
+    @Override
+    public void changeGear(int newGear){
+        gear = newGear;
+    }
+    
+    // Increase speed
+    @Override
+    public void speedUp(int increment){
+        speed = speed + increment;
+    }
+    
+    // Decrease speed
+    @Override
+    public void applyBrakes(int decrement){
+        speed = speed - decrement;
+    }
+    
+    public void printStates() {
+        System.out.println("speed: " + speed
+            + " gear: " + gear);
+    }
+    
+}
+
+class Main
+{    
+    public static void main (String[] args) 
+    {
+    
+        // Instance of Bicycle(Object)
+        Bicycle bicycle = new Bicycle();
+        
+      	bicycle.changeGear(2);
+        bicycle.speedUp(3);
+        bicycle.applyBrakes(1);
+        
+        System.out.print("Bicycle present state : ");
+        bicycle.printStates();
+        
+        // Instance of Bike (Object)
+        Bike bike = new Bike();
+        bike.changeGear(1);
+        bike.speedUp(4);
+        bike.applyBrakes(3);
+        
+        System.out.print("Bike present state : ");
+        bike.printStates();
+    }
+}
