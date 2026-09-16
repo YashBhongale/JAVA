@@ -317,3 +317,94 @@ class Main
         bike.printStates();
     }
 }
+
+//Polymorphism = "Poly" = Many, "Morph" = Shapes , Objects can identify as other objects, they can be treated as object of common super-class.
+//We can also attain it by using interfaces.
+import java.util.Random;
+
+public class Main{
+    public static void main(String[] args) {
+        Car car = new Car();
+        Boat boat = new Boat();
+        Bike bike = new Bike();
+
+        Vehicle[] vehicles = {car,boat,bike};
+
+        for (Vehicle vehicle : vehicles) {
+            vehicle.go();
+        }
+    }
+}
+public abstract class Vehicle {
+    abstract void go();
+}
+public class Car extends Vehicle {
+    @Override
+    void go() {
+        System.out.println("Driving a Car...");
+    }
+}
+public class Bike extends Vehicle {
+    @Override
+    void go() {
+        System.out.println("Riding a Bike...");
+    }
+}
+public class Boat extends Vehicle {
+    @Override
+    void go() {
+        System.out.println("Sailing a Boat...");
+    }
+}
+
+//Runtime polymorphism: the method that gets executed gets decided while runtime based on actual type of object is known as runtime/Dynamic polymorphism.
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Vehicle vehicle;
+        System.out.print("Enter which type of vehicle (1-Car, 2-Bike, 3-Boat): ");
+        int choice = sc.nextInt();
+        switch (choice) {
+            case 1 -> {
+                vehicle = new Car();
+                vehicle.go();
+            }
+            case 2 -> {
+                vehicle = new Bike();
+                vehicle.go();
+            }
+            case 3 -> {
+                vehicle = new Boat();
+                vehicle.go();
+            }
+            default -> System.out.println("Invalid choice.");
+        }
+
+        sc.close();
+
+    }
+}
+public abstract class Vehicle {
+    abstract void go();
+}
+public class Car extends Vehicle {
+    @Override
+    void go() {
+        System.out.println("Driving a Car...");
+    }
+}
+public class Bike extends Vehicle {
+    @Override
+    void go() {
+        System.out.println("Riding a Bike...");
+    }
+}
+public class Boat extends Vehicle {
+    @Override
+    void go() {
+        System.out.println("Sailing a Boat...");
+    }
+}
